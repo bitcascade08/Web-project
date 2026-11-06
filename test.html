@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Efes Event Hub - Automated Test Suite</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #140733;
+      color: #f1f5f9;
+      padding: 2rem;
+      line-height: 1.5;
+    }
+    .container {
+      max-width: 820px;
+      margin: 0 auto;
+    }
+    h1 {
+      font-size: 1.75rem;
+      margin-bottom: 0.5rem;
+      color: #f59e0b;
+    }
+    .summary-card {
+      background: #1e0b4f;
+      padding: 1.25rem;
+      border-radius: 4px;
+      margin-bottom: 1.5rem;
+      display: flex;
+      gap: 2rem;
+      border: 1px solid #230d66;
+    }
+    .stat {
+      display: flex;
+      flex-direction: column;
+    }
+    .stat-val {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+    .stat-label {
+      font-size: 0.8rem;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .test-group {
+      background: #1e0b4f;
+      border-radius: 4px;
+      margin-bottom: 1.25rem;
+      overflow: hidden;
+      border: 1px solid #230d66;
+    }
+    .group-header {
+      padding: 0.75rem 1rem;
+      font-weight: 600;
+      background: #230d66;
+      font-size: 0.95rem;
+      color: #ffffff;
+    }
+    .test-item {
+      padding: 0.65rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      font-size: 0.875rem;
+    }
+    .test-item:last-child {
+      border-bottom: none;
+    }
+    .badge {
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+    .badge-pass {
+      background: #065f46;
+      color: #34d399;
+    }
+    .badge-fail {
+      background: #7f1d1d;
+      color: #f87171;
+    }
+    .back-btn {
+      display: inline-block;
+      margin-top: 1rem;
+      color: #60a5fa;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .back-btn:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Efes Event Hub Automated Test Suite</h1>
+    <p style="color: #94a3b8; margin-bottom: 1.25rem;">Verification suite asserting input validation patterns, LocalStorage persistence, INR pricing split, and catalog filtering.</p>
+    
+    <div class="summary-card">
+      <div class="stat">
+        <span class="stat-val" id="totalCount" style="color: #f59e0b;">0</span>
+        <span class="stat-label">Total Tests</span>
+      </div>
+      <div class="stat">
+        <span class="stat-val" id="passCount" style="color: #34d399;">0</span>
+        <span class="stat-label">Passed</span>
+      </div>
+      <div class="stat">
+        <span class="stat-val" id="failCount" style="color: #f87171;">0</span>
+        <span class="stat-label">Failed</span>
+      </div>
+    </div>
+
+    <div id="testOutput"></div>
+
+    <a href="index.html" class="back-btn">&larr; Return to Efes Event Hub Application</a>
+  </div>
+
+  <!-- Include App Modules -->
+  <script src="js/data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/validation.js"></script>
+
+  <script>
+    const results = [];
+
+    function assert(name, condition, errorMsg = "") {
+      const passed = Boolean(condition);
+      results.push({ name, passed, errorMsg });
+    }
+
+    // ==========================================
+    // 1. Form Validation Suite
+    // ==========================================
+    // Name validation
+    assert("Name: Valid Indian full name passes", FormValidator.validateName("Aarav Sharma").isValid);
+    assert("Name: Hyphenated name passes", FormValidator.validateName("Claire Saint-Laurent").isValid);
+    assert("Name: Empty name rejected", !FormValidator.validateName("").isValid);
+    assert("Name: Single character rejected", !FormValidator.validateName("A").isValid);
+    assert("Name: Numeric characters rejected", !FormValidator.validateName("Aarav123").isValid);
+
+    // Email validation
+    assert("Email: Standard email passes", FormValidator.validateEmail("aarav.sharma@example.in").isValid);
+    assert("Email: Multi-subdomain corporate email passes", FormValidator.validateEmail("eng.team@infra.techcorp.co.in").isValid);
+    assert("Email: Missing domain rejected", !FormValidator.validateEmail("aarav@").isValid);
+    assert("Email: Missing @ rejected", !FormValidator.validateEmail("aaravexample.in").isValid);
+
+    // Phone validation (10-15 digits support)
+    assert("Phone: Standard 10-digit mobile number passes", FormValidator.validatePhone("9876543210").isValid);
+    assert("Phone: Formatted phone with country code passes", FormValidator.validatePhone("+91 98765 43210").isValid);
+    assert("Phone: Short phone rejected", !FormValidator.validatePhone("98765").isValid);
+
+    // Tickets & Terms
+    assert("Tickets: Valid quantity (1 to 5) passes", FormValidator.validateTickets(3).isValid);
+    assert("Tickets: Quantity above 5 rejected", !FormValidator.validateTickets(6).isValid);
+    assert("Tickets: Zero passes rejected", !FormValidator.validateTickets(0).isValid);
+    assert("Terms: Consent checkbox accepted", FormValidator.validateTerms(true).isValid);
+    assert("Terms: Unchecked consent rejected", !FormValidator.validateTerms(false).isValid);
+
+    // ==========================================
+    // 2. Storage Manager Suite
+    // ==========================================
+    const testRecord = StorageManager.saveRegistration({
+      participantName: "Priya Nair",
+      email: "priya.nair@techpulse.org",
+      phone: "9876543210",
+      eventId: "vis-1",
+      eventTitle: "National Hackathon and AI Sprint 2026",
+      tickets: 2,
+      totalCost: "Free"
+    });
+
+    assert("Storage: Pass generated with VIS-2026 prefix", Boolean(testRecord && testRecord.id.startsWith("VIS-2026-")));
+    assert("Storage: Registration record retrieved by ID", StorageManager.getRegistrationById(testRecord.id) !== null);
+
+    const initialTotal = StorageManager.getRegistrations().length;
+    StorageManager.deleteRegistration(testRecord.id);
+    const afterDeleteTotal = StorageManager.getRegistrations().length;
+    assert("Storage: Registration record deleted cleanly", afterDeleteTotal === initialTotal - 1);
+
+    StorageManager.saveTheme("dark");
+    assert("Storage: Dark theme preference persisted", StorageManager.getTheme() === "dark");
+
+    // ==========================================
+    // 3. Events Data & Pricing Split Suite
+    // ==========================================
+    assert("Data: Events array populated with 8 items", Array.isArray(EVENTS_DATA) && EVENTS_DATA.length === 8);
+    
+    // Free vs INR pricing split assertion
+    const freeEvents = EVENTS_DATA.filter(e => e.isFree || e.numericPrice === 0);
+    const paidEvents = EVENTS_DATA.filter(e => !e.isFree && e.numericPrice > 0);
+    assert("Data: Exactly 4 free admission events configured", freeEvents.length === 4);
+    assert("Data: Exactly 4 INR paid admission events configured", paidEvents.length === 4);
+    assert("Data: Paid events have valid INR amounts", paidEvents.every(e => e.numericPrice >= 200 && e.numericPrice <= 1000));
+
+    // Category filtering assertions
+    const techEvents = EVENTS_DATA.filter(e => e.category === "technology");
+    assert("Data: Technology category filter returns valid events", techEvents.length > 0 && techEvents.every(e => e.category === "technology"));
+    
+    // Flagship spotlight assertion
+    const spotlightItem = EVENTS_DATA.find(e => e.isSpotlight);
+    assert("Data: Flagship spotlight event configured", Boolean(spotlightItem && spotlightItem.id === "vis-1"));
+
+    // Render output
+    const total = results.length;
+    const passed = results.filter(r => r.passed).length;
+    const failed = total - passed;
+
+    document.getElementById("totalCount").textContent = total;
+    document.getElementById("passCount").textContent = passed;
+    document.getElementById("failCount").textContent = failed;
+
+    const outputContainer = document.getElementById("testOutput");
+    const groupDiv = document.createElement("div");
+    groupDiv.className = "test-group";
+    groupDiv.innerHTML = `<div class="group-header">Vistara Core Logic Assertions (${passed}/${total} Passed)</div>`;
+
+    results.forEach(r => {
+      const item = document.createElement("div");
+      item.className = "test-item";
+      item.innerHTML = `
+        <span>${r.name}</span>
+        <span class="badge ${r.passed ? 'badge-pass' : 'badge-fail'}">${r.passed ? 'PASS' : 'FAIL'}</span>
+      `;
+      groupDiv.appendChild(item);
+    });
+
+    outputContainer.appendChild(groupDiv);
+  </script>
+</body>
+</html>

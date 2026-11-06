@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Efes Event Hub: National hackathons, cultural festivals, tech symposia, and academic unconferences. Free and open registration in Indian Rupees (INR).">
+  <meta name="keywords" content="events, hackathon, tech fest, conference, unconference, registration, tickets, india, efes template">
+  <meta name="author" content="Efes Event Hub">
+
+  <title>Efes Event Hub: National Unconference &amp; Symposia</title>
+
+  <!-- Google Fonts: Playfair Display (Serif Headings) & Montserrat (Geometric Sans Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- Favicon SVG -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23230d66'/><text x='50' y='68' font-size='56' text-anchor='middle' fill='%23ffffff' font-family='serif' font-weight='800'>E</text></svg>">
+</head>
+<body>
+
+  <!-- Accessible Skip Link -->
+  <a href="#eventsCatalogSection" class="skip-anchor">Skip to event directory</a>
+
+  <!-- Top Announcement Bar -->
+  <aside class="announcement-ticker" role="complementary">
+    <span>Registrations active for national hackathons, cultural concerts, and tech symposia. Open access available.</span>
+  </aside>
+
+  <!-- Navigation Header (Efes Style) -->
+  <header class="app-navbar" role="banner">
+    <div class="nav-shell">
+      
+      <a href="#" class="brand-unit" aria-label="Efes Event Hub Home">
+        <div class="brand-logo-mark">E</div>
+        <div class="brand-name">EFES <span>EVENTS</span></div>
+      </a>
+
+      <!-- Center Navigation Links -->
+      <ul class="nav-center-menu" aria-label="Primary Navigation">
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#eventsCatalogSection">Programs</a></li>
+        <li><a href="#aboutUnconference">About</a></li>
+        <li><a href="#discussionExperts">Experts</a></li>
+        <li><a href="#programAgenda">Agenda</a></li>
+      </ul>
+
+      <!-- Right Action Cluster -->
+      <div class="nav-actions-cluster">
+        <span class="currency-tag">INR (₹) Enabled</span>
+
+        <!-- My Passes Vault Trigger -->
+        <button id="vaultTriggerBtn" class="btn-vault-drawer" aria-label="Open My Passes Vault">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="1"/><line x1="7" y1="8" x2="17" y2="8"/><line x1="7" y1="12" x2="17" y2="12"/><line x1="7" y1="16" x2="13" y2="16"/></svg>
+          <span>My Passes</span>
+          <span id="vaultCountBadge" class="vault-badge-pill" style="display: none;">0</span>
+        </button>
+
+        <!-- Theme Switcher -->
+        <button id="themeSwitcherBtn" class="btn-theme-switcher" aria-label="Toggle dark and light theme" title="Toggle Theme">
+          <span id="themeIcon">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          </span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Hero Section: Hostinger Efes Split Layout (Block 0) -->
+  <section class="hero-container" aria-labelledby="heroTitle">
+    <div class="hero-shell">
+      
+      <!-- Left Column: Editorial Proposition -->
+      <div>
+        <div class="hero-eyebrow">
+          <span>11th - 14th November 2026 • Bengaluru, Mumbai &amp; Virtual Stream</span>
+        </div>
+
+        <h1 id="heroTitle" class="hero-heading">
+          National Innovation &amp; <br>
+          <span>Cultural Conclave 2026</span>
+        </h1>
+
+        <p class="hero-narrative">
+          Join senior engineers, virtuosos, founders, and research scholars for India's premier multi-track summit. 
+          8 curated programs spanning applied artificial intelligence, classical fusion, venture financing, and design systems.
+        </p>
+
+        <!-- Quick Search Bar -->
+        <div class="hero-search-bar" role="search">
+          <input 
+            type="text" 
+            id="heroQuickSearch" 
+            placeholder="Search by topic, venue, city, or speaker..."
+            aria-label="Quick search programs"
+          >
+          <button id="heroSearchActionBtn" type="button">Find Events</button>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="hero-actions-row">
+          <a href="#eventsCatalogSection" class="btn btn-primary">Explore All Programs</a>
+          <button id="heroRegisterDirectBtn" class="btn btn-secondary">Register for Passes</button>
+        </div>
+
+        <!-- Telemetry Metrics -->
+        <div class="hero-telemetry-row">
+          <div>
+            <div class="telemetry-val">8+</div>
+            <div class="telemetry-label">Curated Programs</div>
+          </div>
+          <div>
+            <div class="telemetry-val">₹ / Free</div>
+            <div class="telemetry-label">Indian Rupees &amp; Free Access</div>
+          </div>
+          <div>
+            <div class="telemetry-val">Live</div>
+            <div class="telemetry-label">Countdown Clocks</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Flagship Spotlight Card -->
+      <div class="flagship-spotlight-tile">
+        <div class="flagship-label-badge">
+          <span class="flagship-tag">Flagship Spotlight Program</span>
+          <span id="flagshipFormat" class="pill-badge price-free">Free Entry</span>
+        </div>
+
+        <div class="flagship-img-box">
+          <img id="flagshipImage" src="" alt="Flagship event visual">
+        </div>
+
+        <div class="flagship-countdown-strip">
+          <span class="label">Commences In:</span>
+          <span id="flagshipCountdown" class="val">00d 00h 00m 00s</span>
+        </div>
+
+        <h2 id="flagshipTitle" class="flagship-title">Program Title</h2>
+        <p id="flagshipSnippet" class="flagship-snippet"></p>
+
+        <div class="flagship-bottom-bar">
+          <span id="flagshipPrice" class="flagship-price-val">Free</span>
+          <button id="flagshipRegisterBtn" class="btn btn-primary btn-sm">
+            <span>Register Now</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Philosophy Statement Section (Hostinger Efes Block B-OuEvMPr) -->
+  <section class="philosophy-section" aria-label="Summit Philosophy">
+    <div class="philosophy-shell">
+      <blockquote class="philosophy-quote">
+        "In a world of rapid digital change, it is essential to build platforms that elevate community, craftsmanship, and open access."
+      </blockquote>
+      <div class="philosophy-credit">
+        National Developer Guild &amp; Cultural Heritage Foundations
+      </div>
+    </div>
+  </section>
+
+  <!-- About The Unconference / 3-Column Highlights (Hostinger Efes Block QLOF7S9Wn5yvnap8e_ykg) -->
+  <section class="about-unconference-section" id="aboutUnconference" aria-labelledby="aboutTitle">
+    <div class="section-head-center">
+      <span class="section-tag-gold">Core Focus</span>
+      <h2 id="aboutTitle" class="section-title-serif">About The Summit &amp; Unconference</h2>
+    </div>
+
+    <div class="about-pillars-grid">
+      
+      <!-- Pillar 1: The Aim -->
+      <div class="pillar-card">
+        <div class="pillar-num">01</div>
+        <h3 class="pillar-heading">The Aim</h3>
+        <p class="pillar-body">
+          We aim to revitalize the student and developer community by sharing technical breakthroughs, production post-mortems, and open protocol toolchains with zero barriers to entry.
+        </p>
+      </div>
+
+      <!-- Pillar 2: Dynamic Discussion -->
+      <div class="pillar-card">
+        <div class="pillar-num">02</div>
+        <h3 class="pillar-heading">Dynamic Discussion</h3>
+        <p class="pillar-body">
+          Keynote sessions and interactive debate panels featuring leaders across applied machine learning, zero-trust cybersecurity, classical acoustics, and venture funding.
+        </p>
+      </div>
+
+      <!-- Pillar 3: Collaborative Brainstorm -->
+      <div class="pillar-card">
+        <div class="pillar-num">03</div>
+        <h3 class="pillar-heading">Collaborative Brainstorm</h3>
+        <p class="pillar-body">
+          Hands-on hackathons and design sprints where teams develop scalable prototypes with direct one-on-one architecture reviews from senior industry engineering leads.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Main Event Directory & Filter Engine -->
+  <main class="catalog-layout-main" id="eventsCatalogSection">
+    
+    <div class="catalog-heading-wrap">
+      <h2 class="catalog-title">Events and Symposia Directory</h2>
+      <p class="catalog-subheading">Filter by discipline, admission tier (Free or INR ₹), attendance format, or keyword search.</p>
+    </div>
+
+    <!-- Controls Panel -->
+    <div class="catalog-control-panel" role="search" aria-label="Directory Filters">
+      
+      <div class="controls-filter-row">
+        
+        <!-- Search Input -->
+        <div class="search-field-shell">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input 
+            type="search" 
+            id="catalogSearchInput" 
+            class="search-field-input" 
+            placeholder="Search by event title, venue, or speaker..."
+            aria-label="Search events"
+            autocomplete="off"
+          >
+        </div>
+
+        <!-- Format Dropdown -->
+        <select id="formatFilterDropdown" class="dropdown-filter" aria-label="Filter by format">
+          <option value="all">All Formats</option>
+          <option value="In-Person">In-Person Only</option>
+          <option value="Virtual">Virtual Only</option>
+          <option value="Hybrid">Hybrid Only</option>
+        </select>
+
+        <!-- Price Dropdown (Free vs INR) -->
+        <select id="pricingFilterDropdown" class="dropdown-filter" aria-label="Filter by price">
+          <option value="all">All Admissions</option>
+          <option value="free">Free Access Only</option>
+          <option value="paid">Paid Passes (₹)</option>
+        </select>
+
+        <!-- Sort Order -->
+        <select id="sortOrderDropdown" class="dropdown-filter" aria-label="Sort events">
+          <option value="date-asc">Date: Earliest First</option>
+          <option value="date-desc">Date: Furthest First</option>
+          <option value="price-asc">Price: Low to High</option>
+          <option value="title-asc">Title: A to Z</option>
+        </select>
+
+        <!-- Grid / List Switcher -->
+        <div class="view-toggle-unit" role="group" aria-label="Change layout view">
+          <button id="viewGridModeBtn" class="active" title="Card Grid View" aria-label="Card Grid View">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          </button>
+          <button id="viewListModeBtn" title="List View" aria-label="List View">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Category Filter Pills -->
+      <div class="pills-scroll-row" role="tablist" aria-label="Categories">
+        <button class="category-tag-pill active" data-category="all" role="tab" aria-selected="true">All Disciplines</button>
+        <button class="category-tag-pill" data-category="technology" role="tab" aria-selected="false">Technology</button>
+        <button class="category-tag-pill" data-category="music" role="tab" aria-selected="false">Music &amp; Concerts</button>
+        <button class="category-tag-pill" data-category="business" role="tab" aria-selected="false">Business &amp; Startups</button>
+        <button class="category-tag-pill" data-category="cultural" role="tab" aria-selected="false">Arts &amp; Culture</button>
+        <button class="category-tag-pill" data-category="workshops" role="tab" aria-selected="false">Workshops</button>
+        <button class="category-tag-pill" data-category="sports" role="tab" aria-selected="false">Sports &amp; Fitness</button>
+        <button class="category-tag-pill" data-category="academic" role="tab" aria-selected="false">Academic &amp; Debate</button>
+      </div>
+
+      <!-- Status Bar -->
+      <div class="controls-status-bar">
+        <span>Displaying <strong id="matchingCountText">0</strong> event program(s)</span>
+        <button id="resetFiltersActionBtn" class="btn-reset-text">Reset all filters</button>
+      </div>
+
+    </div>
+
+    <!-- Events Deck Container -->
+    <section class="events-deck view-grid" id="eventsDeck" aria-live="polite">
+      <!-- Injected via js/app.js -->
+    </section>
+
+  </main>
+
+  <!-- Discussion Experts Section (Hostinger Efes Block bJZ4Bl4dz) -->
+  <section class="experts-section" id="discussionExperts" aria-labelledby="expertsHeading">
+    <div class="section-head-center">
+      <span class="section-tag-gold" style="color: var(--efes-dark);">Distinguished Faculty</span>
+      <h2 id="expertsHeading" class="section-title-serif dark">Discussion Experts &amp; Keynotes</h2>
+    </div>
+
+    <div class="experts-grid">
+      
+      <!-- Expert 1 -->
+      <div class="expert-card">
+        <div class="expert-photo-box">
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80" alt="Dr. Arvind Rao" loading="lazy">
+        </div>
+        <div class="expert-info">
+          <h3 class="expert-name">Dr. Arvind Rao</h3>
+          <div class="expert-title">Head of AI Research</div>
+          <div class="expert-org">Applied Systems Lab</div>
+        </div>
+      </div>
+
+      <!-- Expert 2 -->
+      <div class="expert-card">
+        <div class="expert-photo-box">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80" alt="Niladri Sen" loading="lazy">
+        </div>
+        <div class="expert-info">
+          <h3 class="expert-name">Niladri Sen</h3>
+          <div class="expert-title">Sitar Virtuoso &amp; Composer</div>
+          <div class="expert-org">Sangeet Heritage Foundation</div>
+        </div>
+      </div>
+
+      <!-- Expert 3 -->
+      <div class="expert-card">
+        <div class="expert-photo-box">
+          <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80" alt="Meera Iyer" loading="lazy">
+        </div>
+        <div class="expert-info">
+          <h3 class="expert-name">Meera Iyer</h3>
+          <div class="expert-title">Managing Partner</div>
+          <div class="expert-org">Bharat Seed Fund</div>
+        </div>
+      </div>
+
+      <!-- Expert 4 -->
+      <div class="expert-card">
+        <div class="expert-photo-box">
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80" alt="Sunita Deshmukh" loading="lazy">
+        </div>
+        <div class="expert-info">
+          <h3 class="expert-name">Sunita Deshmukh</h3>
+          <div class="expert-title">Design Principal</div>
+          <div class="expert-org">Studio Vistara</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Comprehensive Agenda Timeline (Hostinger Efes Block RwM2mi99S) -->
+  <section class="agenda-section" id="programAgenda" aria-labelledby="agendaHeading">
+    <div class="section-head-center">
+      <span class="section-tag-gold">Chronological Flow</span>
+      <h2 id="agendaHeading" class="section-title-serif">Program Schedule &amp; Agenda</h2>
+    </div>
+
+    <div class="agenda-timeline-shell">
+      
+      <div class="agenda-row">
+        <div class="agenda-time-pill">09:30 AM</div>
+        <div>
+          <h3 class="agenda-session-title">Inaugural Keynote &amp; Open Protocol Architecture</h3>
+          <p class="agenda-session-desc">
+            Opening ceremony and keynote exploration detailing scalable machine learning deployment and open data protocols across national infrastructure.
+          </p>
+          <div class="agenda-session-speaker">Keynote: Dr. Arvind Rao</div>
+        </div>
+      </div>
+
+      <div class="agenda-row">
+        <div class="agenda-time-pill">11:00 AM</div>
+        <div>
+          <h3 class="agenda-session-title">National 36-Hour Hackathon Sprint Commences</h3>
+          <p class="agenda-session-desc">
+            Problem statements announced for healthcare diagnostics, EV battery analytics, and public logistics. Architecture mentorship begins across physical and virtual lounges.
+          </p>
+          <div class="agenda-session-speaker">Sprint Lead: National Developer Guild</div>
+        </div>
+      </div>
+
+      <div class="agenda-row">
+        <div class="agenda-time-pill">02:00 PM</div>
+        <div>
+          <h3 class="agenda-session-title">Founders &amp; Venture Conclave: Pitch Demonstrations</h3>
+          <p class="agenda-session-desc">
+            Ten curated early-stage startups present 5-minute live demonstrations to angel syndicates, followed by roundtables on sustainable unit economics.
+          </p>
+          <div class="agenda-session-speaker">Panel Moderator: Meera Iyer</div>
+        </div>
+      </div>
+
+      <div class="agenda-row">
+        <div class="agenda-time-pill">04:30 PM</div>
+        <div>
+          <h3 class="agenda-session-title">Design Systems &amp; Web Accessibility Masterclass</h3>
+          <p class="agenda-session-desc">
+            Deep dive into spatial layout mathematics, WCAG AAA compliance, and scalable design tokens for cross-platform applications.
+          </p>
+          <div class="agenda-session-speaker">Conducted By: Sunita Deshmukh</div>
+        </div>
+      </div>
+
+      <div class="agenda-row">
+        <div class="agenda-time-pill">06:30 PM</div>
+        <div>
+          <h3 class="agenda-session-title">Raga and Rhythm: Acoustic Classical Fusion Ensemble</h3>
+          <p class="agenda-session-desc">
+            Live evening concert blending sitar, sarod, and tabla with modern acoustic arrangements in an auditorium acoustic setting.
+          </p>
+          <div class="agenda-session-speaker">Concert Lead: Niladri Sen Trio</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Institutional Partners (Hostinger Efes Block Y-XRjOS_r) -->
+  <section class="partners-section" aria-label="Institutional Partners">
+    <div class="partners-shell">
+      <div class="partners-heading">Patrons &amp; Institutional Partners</div>
+      <div class="partners-logo-row">
+        <span class="partner-logo-item">National Developer Guild</span>
+        <span class="partner-logo-item">Sangeet Heritage Foundation</span>
+        <span class="partner-logo-item">Bharat Seed Fund</span>
+        <span class="partner-logo-item">Indian Design Council</span>
+        <span class="partner-logo-item">All India Sports Federation</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Closing Call to Action Banner (Hostinger Efes Block tkagUNy765) -->
+  <section class="closing-cta-section" aria-labelledby="ctaHeading">
+    <div class="closing-cta-shell">
+      <div class="closing-cta-eyebrow">Limited Passes Remaining</div>
+      <h2 id="ctaHeading" class="closing-cta-title">
+        Talk with some of the best specialists &amp; innovators.
+      </h2>
+      <p class="closing-cta-sub">
+        11th - 14th November 2026 • Hybrid &amp; In-Person Passes Available in Indian Rupees (₹) and Free Community Access.
+      </p>
+      <button id="closingCtaActionBtn" class="btn btn-primary">Register for Passes Now</button>
+    </div>
+  </section>
+
+  <!-- Modal 1: Event Detail Dialog -->
+  <div class="modal-backdrop-layer" id="detailModalDialog" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modalDetailHeading">
+    <div class="modal-box-frame">
+      
+      <div class="modal-box-head">
+        <div style="display: flex; gap: 0.5rem; align-items: center;">
+          <span class="pill-badge cat" id="modalCategoryBadge">Category</span>
+          <span class="pill-badge" id="modalFormatBadge" style="background-color: var(--bg-subtle); color: var(--text-main); border: 1px solid var(--border-medium);">Format</span>
+        </div>
+        <button class="modal-close-trigger" id="detailDismissBtn" aria-label="Close dialog">&times;</button>
+      </div>
+
+      <div class="modal-box-body">
+        <img id="modalBannerImage" style="width: 100%; height: 230px; object-fit: cover; margin-bottom: 1.25rem;" src="" alt="Event visual preview">
+
+        <h2 id="modalDetailHeading" class="modal-box-title" style="margin-bottom: 0.45rem;">Event Title</h2>
+
+        <div class="detail-table-specs">
+          <div class="spec-item">
+            <span class="spec-name">Date and Time</span>
+            <span class="spec-val" id="modalDateLine">Date</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-name">Venue / Facility</span>
+            <span class="spec-val" id="modalVenueLine">Venue</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-name">Speaker / Faculty Lead</span>
+            <span class="spec-val" id="modalSpeakerLine">Speaker</span>
+          </div>
+          <div class="spec-item">
+            <span class="spec-name">Commences In</span>
+            <span class="spec-val" id="modalCountdownLine" style="color: var(--efes-gold); font-family: var(--font-mono);">00d 00h 00m 00s</span>
+          </div>
+        </div>
+
+        <h4 style="font-weight: 700; margin-bottom: 0.35rem; color: var(--text-main); font-family: var(--font-serif); font-size: 1.15rem;">Program Overview</h4>
+        <p id="modalDescriptionParagraph" style="color: var(--text-secondary); line-height: 1.6; font-size: 0.95rem; margin-bottom: 1.25rem;"></p>
+
+        <h4 style="font-weight: 700; margin-bottom: 0.35rem; color: var(--text-main); font-family: var(--font-serif); font-size: 1.15rem;">Session Schedule</h4>
+        <div class="agenda-flow" id="modalAgendaFlow"></div>
+
+        <div style="margin-top: 1.75rem; display: flex; gap: 1rem; align-items: center;">
+          <div style="flex: 1;">
+            <span style="font-size: 0.72rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700; display: block;">Registration Fee</span>
+            <span id="modalFeeDisplay" style="font-size: 1.35rem; font-weight: 700; font-family: var(--font-serif); color: var(--text-main);">Free</span>
+          </div>
+          <button class="btn btn-dark" id="modalRegisterActionBtn">
+            <span>Register for this Event</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Modal 2: Registration Dialog -->
+  <div class="modal-backdrop-layer" id="registrationModalDialog" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="regDialogHeading">
+    <div class="modal-box-frame">
+      
+      <div class="modal-box-head">
+        <h3 id="regDialogHeading" class="modal-box-title">Event Registration</h3>
+        <button class="modal-close-trigger" id="regDismissBtn" aria-label="Close registration dialog">&times;</button>
+      </div>
+
+      <div class="modal-box-body">
+        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem;">
+          Provide attendee details to register. All fields marked with an asterisk (<span style="color: var(--efes-danger);">*</span>) are required.
+        </p>
+
+        <form id="participantForm" novalidate>
+          
+          <!-- Event Selection -->
+          <div class="form-field-group">
+            <label for="regEventChoice" class="form-field-label">Selected Program <span class="required-dot">*</span></label>
+            <select id="regEventChoice" class="form-field-input" required aria-describedby="eventErrorTip">
+              <!-- Dynamically populated -->
+            </select>
+            <span class="field-error-msg" id="eventErrorTip"></span>
+          </div>
+
+          <!-- Participant Full Name -->
+          <div class="form-field-group">
+            <label for="regFullName" class="form-field-label">Full Name <span class="required-dot">*</span></label>
+            <input 
+              type="text" 
+              id="regFullName" 
+              class="form-field-input" 
+              placeholder="e.g., Ananya Sharma" 
+              required
+              aria-describedby="nameErrorTip"
+              autocomplete="name"
+            >
+            <span class="field-error-msg" id="nameErrorTip"></span>
+          </div>
+
+          <!-- Email Address -->
+          <div class="form-field-group">
+            <label for="regEmail" class="form-field-label">Email Address <span class="required-dot">*</span></label>
+            <input 
+              type="email" 
+              id="regEmail" 
+              class="form-field-input" 
+              placeholder="e.g., ananya.sharma@college.ac.in" 
+              required
+              aria-describedby="emailErrorTip"
+              autocomplete="email"
+            >
+            <span class="field-error-msg" id="emailErrorTip"></span>
+          </div>
+
+          <!-- Mobile Phone Number -->
+          <div class="form-field-group">
+            <label for="regMobile" class="form-field-label">10-Digit Mobile Number <span class="required-dot">*</span></label>
+            <input 
+              type="tel" 
+              id="regMobile" 
+              class="form-field-input" 
+              placeholder="e.g., 9876543210 or 10-digit number" 
+              required
+              aria-describedby="mobileErrorTip"
+              autocomplete="tel"
+            >
+            <span class="field-error-msg" id="mobileErrorTip"></span>
+          </div>
+
+          <!-- Passes & Live Total Calculation in INR (₹) -->
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div class="form-field-group">
+              <label for="regPassCount" class="form-field-label">Passes Quantity <span class="required-dot">*</span></label>
+              <select id="regPassCount" class="form-field-input" required aria-describedby="passesErrorTip">
+                <option value="1">1 Attendee</option>
+                <option value="2">2 Attendees</option>
+                <option value="3">3 Attendees</option>
+                <option value="4">4 Attendees</option>
+                <option value="5">5 Attendees (Maximum)</option>
+              </select>
+              <span class="field-error-msg" id="passesErrorTip"></span>
+            </div>
+
+            <div class="form-field-group">
+              <label class="form-field-label">Total Amount</label>
+              <div id="regTotalCostDisplay" style="padding: 0.75rem 1rem; background-color: var(--bg-subtle); border: 1px solid var(--border-medium); font-weight: 700; color: var(--text-main); font-family: var(--font-serif); font-size: 1.1rem;">
+                Free
+              </div>
+            </div>
+          </div>
+
+          <!-- Special Accommodations -->
+          <div class="form-field-group">
+            <label for="regSpecialNotes" class="form-field-label">College, Department, or Notes (Optional)</label>
+            <textarea id="regSpecialNotes" class="form-field-input" rows="2" placeholder="College name, department, or special accessibility requests..."></textarea>
+          </div>
+
+          <!-- Terms Checkbox -->
+          <div class="form-field-group">
+            <label class="terms-checkbox-label">
+              <input type="checkbox" id="regTermsAgreement" required aria-describedby="termsErrorTip">
+              <span style="font-size: 0.86rem; color: var(--text-secondary);">
+                I confirm the information provided is accurate and agree to participation terms. <span class="required-dot">*</span>
+              </span>
+            </label>
+            <span class="field-error-msg" id="termsErrorTip"></span>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="btn btn-dark btn-block" style="margin-top: 0.5rem;">
+            <span>Complete Registration</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          </button>
+
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Modal 3: Confirmation Dialog (Digital Admission Pass) -->
+  <div class="modal-backdrop-layer" id="confirmationModalDialog" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="confirmDialogHeading">
+    <div class="modal-box-frame">
+      
+      <div class="modal-box-head">
+        <h3 id="confirmDialogHeading" class="modal-box-title" style="color: var(--efes-success); display: flex; align-items: center; gap: 0.5rem;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 15 10"/></svg>
+          Registration Confirmed
+        </h3>
+        <button class="modal-close-trigger" id="confirmDismissBtn" aria-label="Close confirmation dialog">&times;</button>
+      </div>
+
+      <div class="modal-box-body" style="text-align: center;">
+        <h4 style="font-size: 1.25rem; font-weight: 700; color: var(--text-main); font-family: var(--font-serif); margin-bottom: 0.35rem;">
+          Your Admission Pass is Confirmed
+        </h4>
+        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem;">
+          Your pass has been generated and saved locally on this browser. Present your pass ID upon entry.
+        </p>
+
+        <!-- Digital Pass Card -->
+        <div class="digital-pass-card">
+          <div class="pass-card-head">
+            <div>
+              <span style="font-size: 0.72rem; text-transform: uppercase; color: var(--text-muted); font-weight: 700;">Digital Admission Pass</span>
+              <h4 id="confirmEventTitle" style="font-size: 1.15rem; font-weight: 700; font-family: var(--font-serif); color: var(--text-main);">Program Title</h4>
+            </div>
+            <div id="confirmBookingCode" class="pass-id-code">VIS-2026-XXXX</div>
+          </div>
+
+          <div class="pass-grid-info">
+            <div>
+              <span class="spec-name">Attendee</span>
+              <div id="confirmAttendeeName" class="spec-val">Attendee Name</div>
+            </div>
+            <div>
+              <span class="spec-name">Pass Quantity</span>
+              <div id="confirmTicketsCount" class="spec-val">1 Pass</div>
+            </div>
+            <div>
+              <span class="spec-name">Date &amp; Schedule</span>
+              <div id="confirmDateSchedule" class="spec-val" style="font-size: 0.85rem;">Date</div>
+            </div>
+            <div>
+              <span class="spec-name">Total Amount</span>
+              <div id="confirmTotalPaidDisplay" class="spec-val" style="color: var(--efes-success); font-family: var(--font-serif);">Free</div>
+            </div>
+            <div style="grid-column: 1 / -1;">
+              <span class="spec-name">Venue Facility</span>
+              <div id="confirmVenueAddress" class="spec-val" style="font-size: 0.85rem;">Venue Address</div>
+            </div>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap;">
+          <button class="btn btn-outline btn-sm" id="downloadIcsBtn">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="1"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            <span>Add to Calendar (.ics)</span>
+          </button>
+          <button class="btn btn-outline btn-sm" id="confirmOpenVaultBtn">View in My Passes</button>
+          <button class="btn btn-dark btn-sm" id="confirmDoneBtn">Done</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Drawer: Pass Vault (My Passes) -->
+  <div class="vault-slide-overlay" id="passVaultSlideDrawer" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="vaultDrawerTitle">
+    <div class="vault-slide-container">
+      
+      <div class="vault-slide-head">
+        <h3 id="vaultDrawerTitle" class="modal-box-title">My Admission Passes</h3>
+        <button class="modal-close-trigger" id="vaultDismissBtn" aria-label="Close pass vault drawer">&times;</button>
+      </div>
+
+      <div class="vault-slide-body" id="vaultCardsList">
+        <!-- Rendered via js/app.js -->
+      </div>
+
+      <div style="padding: 1.25rem; border-top: 1px solid var(--border-light); display: flex; gap: 0.75rem;">
+        <button class="btn btn-outline btn-block btn-sm" id="vaultExportJsonBtn">
+          <span>Export Passes (JSON)</span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Toast Notification Shelf -->
+  <div class="toast-wrapper" id="toastShelf" aria-live="assertive"></div>
+
+  <!-- Site Footer (Efes Style) -->
+  <footer class="site-footer-base" role="contentinfo">
+    <div class="footer-content-wrap">
+      
+      <div class="footer-top-row">
+        <div>
+          <div class="brand-unit" style="margin-bottom: 0.75rem;">
+            <div class="brand-logo-mark">E</div>
+            <span class="brand-name">EFES <span>EVENTS</span></span>
+          </div>
+          <p style="font-size: 0.88rem; color: rgba(255, 255, 255, 0.7); max-width: 480px; line-height: 1.6;">
+            A responsive event discovery and registration platform for national unconferences, symposia, and cultural summits across India.
+          </p>
+        </div>
+
+        <ul class="footer-links-list" aria-label="Footer Navigation">
+          <li><a href="#eventsCatalogSection">Directory</a></li>
+          <li><a href="#aboutUnconference">About</a></li>
+          <li><a href="#discussionExperts">Experts</a></li>
+          <li><a href="#programAgenda">Agenda</a></li>
+          <li><a href="test.html">Test Suite</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-bottom-row">
+        <p>&copy; 2026 Efes Event Hub. K Explore Web Designing Entry.</p>
+        <p>Built with semantic HTML5, CSS3, and ES6 JavaScript. LocalStorage Persistence.</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/validation.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
